@@ -7,4 +7,3 @@ RUN pip install -r requirement.txt
 EXPOSE 8080
 ENTRYPOINT ["python"]
 CMD ["app.py"]
-
