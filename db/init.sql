@@ -16,3 +16,4 @@ INSERT INTO `shipping`.`tracking`
 `tracking`)
 VALUES
 (111111,2);
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%';
