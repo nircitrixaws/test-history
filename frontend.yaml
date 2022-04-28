@@ -5,6 +5,7 @@ metadata:
   labels:
     type: web
 spec:
+  replicas: 2
   template:
     metadata:
       name: pyapp-pod
@@ -29,4 +30,4 @@ spec:
     targetPort: 8080
     protocol: TCP
   selector:
-    lang: pythonI
+    lang: python

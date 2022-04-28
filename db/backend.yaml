@@ -5,6 +5,7 @@ metadata:
   labels:
     type: db
 spec:
+  replicas: 2
   template:
     metadata:
       name: mysql-pod
@@ -39,4 +40,4 @@ spec:
     targetPort: 3306
     protocol: TCP
   selector:
-    lang: pythonI
+    lang: sql
