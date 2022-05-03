@@ -1,9 +1,10 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_sqlalchemy import SQLAlchemy
+import os
 
 app = Flask(__name__)
 app.secret_key = "Secret Key"
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root@localhost:3306/shipping'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root@localhost/shipping'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
@@ -29,4 +30,5 @@ def tracking():
 
 
 if __name__ == '__main__':
-   app.run(debug = True)
+   port = int(os.environ.get('PORT', 5000))
+   app.run(debug=True, host='0.0.0.0', port=port)
