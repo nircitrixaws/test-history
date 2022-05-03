@@ -1,5 +1,3 @@
-CREATE DATABASE shipping;
-use shipping;
 CREATE TABLE tracking (
     ID int,
     tracking varchar(255)
