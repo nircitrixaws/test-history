@@ -4,6 +4,7 @@ MAINTAINER nirmal
 COPY . /myapp
 WORKDIR /myapp
 RUN pip install --upgrade pip
+RUN /bin/sh -c "apk add --no-cache bash"
 RUN apk update &&\
 apk add python3 python3-dev mariadb-dev build-base &&\
 pip3 install mysqlclient &&\
