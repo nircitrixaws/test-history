@@ -1,4 +1,4 @@
-FROM python:alpine3.7
+FROM python:3.7
 LABEL Client="logistic-python app"
 MAINTAINER nirmal
 COPY . /myapp
