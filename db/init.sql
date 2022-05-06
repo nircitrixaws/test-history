@@ -15,4 +15,5 @@ INSERT INTO `shipping`.`tracking`
 `tracking`)
 VALUES
 (111111,2);
+commit;
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'%';
