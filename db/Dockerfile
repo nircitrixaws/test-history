@@ -6,3 +6,4 @@ ENV MYSQL_SERVER_PORT=3306
 ENV MYSQL_DATABASE='shipping'
 EXPOSE 3306
 COPY ./ /docker-entrypoint-initdb.d/
+command: [--default-authentication-plugin=mysql_native_password]
