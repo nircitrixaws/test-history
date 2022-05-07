@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 import os
 app = Flask(__name__)
 app.secret_key = "Secret Key"
+#in the below url the env variables mentioned in the DB pod dockerfile are used. root is the root userID,admin is the root password,backendsvc is the db pod exosed service and shipping is the database name
 app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:admin@backendsvc/shipping"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
