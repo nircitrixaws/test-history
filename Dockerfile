@@ -11,6 +11,8 @@ apk del python3-dev mariadb-dev build-base &&\
 apk add mariadb-client-libs
 #RUN /bin/sh -c "apk add --no-cache bash"
 RUN pip install -r requirement.txt
+RUN pip install cryptography
+RUN python3 -m pip install PyMySQL[rsa]
 EXPOSE 5000
 ENTRYPOINT ["python"]
 CMD ["app.py"]
