@@ -16,11 +16,11 @@ spec:
         podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
           - labelSelector:
-            matchExpressions:
-            - key: lang
-              operator: In
-              values:
-              - python
+              matchExpressions:
+              - key: lang
+                operator: In
+                values:
+                - python
             topologyKey: "kubernetes.io/hostname"  
       containers:
       - name: pyapp-con
