@@ -1,5 +1,3 @@
 Flask
-mysql-connector
 Flask-SQLAlchemy
-mysqlclient
-flask_mysqldb
+mysql-connector
