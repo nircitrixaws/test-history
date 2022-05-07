@@ -5,7 +5,7 @@ metadata:
   labels:
     type: db
 spec:
-  replicas: 2
+  replicas: 1
   template:
     metadata:
       name: mysql-pod
@@ -16,11 +16,12 @@ spec:
       - name: mysql-con
         image: 915551958967.dkr.ecr.ap-south-1.amazonaws.com/mysql_container:nkumar
           #imagePullPolicy: IfNotPresent
-          #args: ["--default-authentication-plugin=mysql_native_password"]
+        args: ["--default-authentication-plugin=mysql_native_password"]
           # resources: {}
           #terminationMessagePath: /dev/termination-log
           #terminationMessagePolicy: File
           #dnsPolicy: ClusterFirst
+          #command: [--default-authentication-plugin=mysql_native_password]
       restartPolicy: Always
         #schedulerName: default-scheduler
         #securityContext: {}
