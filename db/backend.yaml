@@ -12,6 +12,16 @@ spec:
       labels:
         lang: sql
     spec:
+      affinity:
+        podAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: lang
+                operator: in
+                values:
+                - python
+            topologyKey: "kubernetes.io/hostname"    
       containers:
       - name: mysql-con
         image: 915551958967.dkr.ecr.ap-south-1.amazonaws.com/mysql_container:nkumar
