@@ -15,7 +15,16 @@ class Tracking(db.Model):
 
    def __init__(self, tracking):
       self.tracking = tracking
-
+      
+@app.route('/liveness')
+def healthx():
+  time.sleep(2);
+  return "<h1><center>Liveness check completed</center><h1>"
+  
+@app.route('/readiness')
+def healthz():
+  time.sleep(20);
+  return "<h1><center>Readiness check completed</center><h1>"
 
 @app.route('/')
 def hello_name():
