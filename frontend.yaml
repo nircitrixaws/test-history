@@ -24,7 +24,7 @@ spec:
             topologyKey: "kubernetes.io/hostname"  
       containers:
       - name: pyapp-con
-        image: 915551958967.dkr.ecr.ap-south-1.amazonaws.com/flask_container:nkumar
+        image: 915551958967.dkr.ecr.ap-south-1.amazonaws.com/flask_container:nkumar1
         livenessProbe:
           httpGet:
             path: /liveness
