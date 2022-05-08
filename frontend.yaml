@@ -25,6 +25,22 @@ spec:
       containers:
       - name: pyapp-con
         image: 915551958967.dkr.ecr.ap-south-1.amazonaws.com/flask_container:nkumar
+        livenessProbe:
+          httpGet:
+            path: /liveness
+            port: 5000
+          initialDelaySeconds: 15
+          timeoutSeconds: 2
+          periodSeconds: 5
+          failureThreshold: 2
+        readinessProbe:
+          httpGet:
+            path: /readiness
+            port: 5000
+          initialDelaySeconds: 10
+          timeoutSeconds: 3
+          periodsSeconds: 10
+          failureThreshold: 3          
   selector:
     matchLabels:
       lang: python
