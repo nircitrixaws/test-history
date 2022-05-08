@@ -16,16 +16,6 @@ class Tracking(db.Model):
 
    def __init__(self, tracking):
       self.tracking = tracking
-      
-@app.route('/liveness')
-def healthx():
-  time.sleep(2);
-  return "<h1><center>Liveness check completed</center><h1>"
-  
-@app.route('/readiness')
-def healthz():
-  time.sleep(20);
-  return "<h1><center>Readiness check completed</center><h1>"
 
 @app.route('/')
 def hello_name():
@@ -38,6 +28,15 @@ def tracking():
    my_data = Tracking.query.get(track)
    return render_template('tracking.html', result = my_data)
 
+@app.route('/liveness')
+def healthx():
+  time.sleep(2);
+  return "<h1><center>Liveness check completed</center><h1>"
+  
+@app.route('/readiness')
+def healthz():
+  time.sleep(20);
+  return "<h1><center>Readiness check completed</center><h1>"
 
 if __name__ == '__main__':
    port = int(os.environ.get('PORT', 5000))
