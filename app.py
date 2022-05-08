@@ -35,7 +35,7 @@ def healthx():
   
 @app.route('/readiness')
 def healthz():
-  time.sleep(20);
+  time.sleep(2);
   return "<h1><center>Readiness check completed</center><h1>"
 
 if __name__ == '__main__':
