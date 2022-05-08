@@ -4,11 +4,10 @@ MAINTAINER nirmal
 COPY . /myapp
 WORKDIR /myapp
 RUN pip install --upgrade pip
-RUN apk update &&\
-apk add python3 python3-dev mariadb-dev build-base &&\
-pip3 install mysqlclient &&\
-apk del python3-dev mariadb-dev build-base &&\
-apk add mariadb-client-libs
+RUN apk add --no-cache --virtual .build-deps mariadb-dev ... \
+    && pip install ...\
+    && apk add --virtual .runtime-deps mariadb-client-libs \
+    && apk del .build-deps
 RUN pip install -r requirement.txt
 EXPOSE 5000
 ENTRYPOINT ["python"]
