@@ -54,6 +54,7 @@ spec:
   ports:
   - port:  5000
     targetPort: 5000
+    nodePort: 31111
     protocol: TCP
   selector:
     lang: python
