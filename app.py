@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_sqlalchemy import SQLAlchemy
 import os
+import time
 app = Flask(__name__)
 app.secret_key = "Secret Key"
 #in the below url the env variables mentioned in the DB pod dockerfile are used. root is the root userID,admin is the root password,backendsvc is the db pod exosed service and shipping is the database name
