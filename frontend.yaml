@@ -13,7 +13,7 @@ spec:
         lang: python
       annotations:
         prometheus.io/scrape: 'true'
-        prometheus.io/port:   '9090'
+        prometheus.io/port: '9102'
     spec:
       affinity:
         podAntiAffinity:
