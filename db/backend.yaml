@@ -8,9 +8,6 @@ spec:
   replicas: 1
   template:
     metadata:
-      annotations:
-        prometheus.io/scrape
-        prometheus.io/port
       name: mysql-pod
       labels:
         lang: sql
