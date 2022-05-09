@@ -11,6 +11,9 @@ spec:
       name: mysql-pod
       labels:
         lang: sql
+      annotations:
+        prometheus.io/scrape: 'true'
+        prometheus.io/port:   '9090'
     spec:
       affinity:
         podAffinity:
