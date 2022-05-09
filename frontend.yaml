@@ -8,9 +8,6 @@ spec:
   replicas: 2
   template:
     metadata:
-      annotations:
-        prometheus.io/scrape
-        prometheus.io/port
       name: pyapp-pod
       labels:
         lang: python
