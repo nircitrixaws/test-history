@@ -11,6 +11,9 @@ spec:
       name: pyapp-pod
       labels:
         lang: python
+      annotations:
+        prometheus.io/scrape: 'true'
+        prometheus.io/port:   '9090'
     spec:
       affinity:
         podAntiAffinity:
