@@ -14,7 +14,6 @@ spec:
       annotations:
         prometheus.io/scrape: 'true'
         prometheus.io/port: '9090'
-        prometheus.io/path: 'metrics'
     spec:
       affinity:
         podAffinity:
@@ -43,7 +42,6 @@ metadata:
   annotations:
     prometheus.io/scrape: 'true'
     prometheus.io/port: '9090'
-    prometheus.io/path: 'metrics'
 spec:
   type: ClusterIP
   ports:
