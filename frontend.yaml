@@ -13,8 +13,7 @@ spec:
         lang: python
       annotations:
         prometheus.io/scrape: 'true'
-        prometheus.io/port: '9102'
-        prometheus.io/path: 'metrics'
+        prometheus.io/port: '5000'
     spec:
       affinity:
         podAntiAffinity:
@@ -53,6 +52,9 @@ apiVersion: v1
 kind: Service
 metadata:
   name: frontendsvc
+  annotations:
+    prometheus.io/scrape: 'true'
+    prometheus.io/port: '5000'
 spec:
   type: NodePort
   ports:
