@@ -13,8 +13,7 @@ spec:
         lang: python
       annotations:
         prometheus.io/scrape: 'true'
-        prometheus.io/port: '9102'
-        prometheus.io/scheme: 'tls_config'
+        prometheus.io/port: '9090'
     spec:
       affinity:
         podAntiAffinity:
@@ -56,7 +55,6 @@ metadata:
   annotations:
     prometheus.io/scrape: 'true'
     prometheus.io/port: '9090'
-    prometheus.io/scheme: 'tls_config'
 spec:
   type: NodePort
   ports:
